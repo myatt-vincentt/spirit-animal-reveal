@@ -1,6 +1,7 @@
 // Dev-only: keys 1–6 become an animal, 0 hides it; window.__spirit exposes
-// the store and the live face readings for checks. Scene.tsx lazy-imports
-// this behind an inline NODE_ENV check, so it never reaches production.
+// the store and the live face readings to the browser console. Scene.tsx
+// lazy-imports this behind an inline NODE_ENV check, so it never reaches
+// production.
 import { useEffect } from "react";
 import { useThree } from "@react-three/fiber";
 

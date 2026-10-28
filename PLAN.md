@@ -1,10 +1,9 @@
 # Plan — Spirit Animal Reveal
 
 Cover your face, pull your hands away, become a random animal with its baby on your shoulder.
-Built on SDK 2.0.0-alpha.9 with the vincentt.studio head accessories; the head pipeline is shared
-with Try-On Studio.
+Built on SDK 2.0.0-alpha.9 with the vincentt.studio head accessories.
 
-## Decisions (from the creator)
+## Design
 
 - Six animals: fox, cat, bunny, owl, tiger, panda. Tiger and panda are thin in the library, so
   they're completed by recolouring existing parts (no new models).
@@ -35,5 +34,3 @@ with Try-On Studio.
 - `Hud.tsx`: the only cue — 🙈 (cover up) until the first reveal and again after 8 s, 🫣 while
   covered.
 - Dev only: `DevKeys.tsx` (keys 1–6 / 0, `window.__spirit`), `DevMediaSwitcher.tsx`, `?occ`.
-- Checks: `audit/animals.cjs` (every animal on every sample video), `audit/cover.cjs` (the loop on a
-  clip with a hand composited over the face).

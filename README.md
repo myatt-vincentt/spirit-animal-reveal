@@ -19,9 +19,7 @@ screen: a 🙈 hint asks you to cover up, 🫣 while you're covered. A tap revea
 - Models: `public/models/vincentt-*.glb`; credits in `CREDITS.md`. To change an animal, edit
   `src/spirit/animals.ts`.
 - Dev preview without a camera: the media switcher (☰) starts on the SDK's "Person Shaking Head"
-  video; keys 1–6 become an animal, 0 hides it; `?occ` draws the head occluder. Checks in
-  `audit/` (look sheets on the SDK's sample videos, and the cover loop on a clip). How it works:
-  `PLAN.md`.
+  video; keys 1–6 become an animal, 0 hides it; `?occ` draws the head occluder. How it works: `PLAN.md`.
 
 ---
 
