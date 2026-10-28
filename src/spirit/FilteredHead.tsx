@@ -104,7 +104,7 @@ const FitSource = ({
     },
   });
   // The hook needs an object to drive; this one is never seen.
-  return <group ref={target} name="tryon-raw" visible={false} />;
+  return <group ref={target} name="spirit-raw" visible={false} />;
 };
 
 export const FilteredHead = ({ children }: { children: ReactNode }) => {

@@ -1,3 +1,28 @@
+# Spirit Animal Reveal
+
+Cover your face with your hands, pull them away, and you're your spirit animal: a fox, a cat, a
+bunny, an owl, a tiger or a panda, with a magic puff of sparkles in its colours and its baby
+sitting on your shoulder. Cover again for another one (never the same twice in a row). No text on
+screen: a 🙈 hint asks you to cover up, 🫣 while you're covered. A tap reveals one too.
+
+- The masks, noses and ears are vincentt.studio head accessories on the SDK's canonical head fit,
+  steadied by a speed-adaptive spring (`src/spirit/headFilter.ts`) with the head occluder in the
+  same group, and they react as their author built them (ears flick, whiskers twitch, a head
+  shake wobbles). Tiger and panda are completed by recolouring: the kitten's tabby coat tinted
+  into a tiger cub, the bear ears in their panda preset.
+- The babies ride on your right shoulder (body tracking, the SDK's canonical torso frame), 1.3×
+  their crown size. Body tracking is loaded at the start but only runs while an animal shows.
+- Cover detection (`src/spirit/cover.ts`): one or two hands over the face, held a third of a
+  second; it keeps the last face box when your hands hide your face.
+- Models: `public/models/vincentt-*.glb`; credits in `CREDITS.md`. To change an animal, edit
+  `src/spirit/animals.ts`.
+- Dev preview without a camera: the media switcher (☰) starts on the SDK's "Person Shaking Head"
+  video; keys 1–6 become an animal, 0 hides it; `?occ` draws the head occluder. Checks in
+  `audit/` (look sheets on the SDK's sample videos, and the cover loop on a clip). How it works:
+  `PLAN.md`.
+
+---
+
 # v2-template
 
 The Vincentt starter app: a real React + R3F + Vincentt XR SDK (`@vincentt-xr/sdk`)
