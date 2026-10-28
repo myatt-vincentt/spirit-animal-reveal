@@ -22,6 +22,7 @@ import { ANIMALS, CROWN, FRAME, SHOULDER_SEAT } from "./animals";
 import { FACE_FPS, FilteredHead } from "./FilteredHead";
 import { live } from "./live";
 import { Part } from "./Part";
+import { Puff } from "./Puff";
 import { useSpirit } from "./state";
 
 /** The blendshapes the models' face_triggers read (see rig.ts). */
@@ -82,6 +83,9 @@ const useStudioLight = () => {
 
 const NEG_CROWN: [number, number, number] = [-CROWN[0], -CROWN[1], -CROWN[2]];
 
+/** The babies are made for the crown; on the shoulder they read bigger. */
+const PET_SCALE = 1.3;
+
 export const SpiritScene = () => {
   const { animal } = useSpirit();
   useStudioLight();
@@ -97,12 +101,14 @@ export const SpiritScene = () => {
         >
           {a?.face.map((p) => <Part key={`${a.id}:${p.id}`} part={p} />)}
         </group>
+        <Puff />
       </FilteredHead>
-      {/* Body tracking only while a pet is out. */}
-      {a ? (
-        <BodyTracker bodyIndex={0}>
+      {/* Body tracking is loaded from the start (so the first pet isn't
+          late) but only runs while a pet is out. */}
+      <BodyTracker bodyIndex={0} active={!!a}>
+        {a ? (
           <CanonicalTorsoFrame>
-            <group position={SHOULDER_SEAT}>
+            <group position={SHOULDER_SEAT} scale={PET_SCALE}>
               <group position={NEG_CROWN}>
                 <group scale={FRAME.scale} position={FRAME.position}>
                   <Part key={`${a.id}:${a.pet.id}`} part={a.pet} />
@@ -110,8 +116,8 @@ export const SpiritScene = () => {
               </group>
             </group>
           </CanonicalTorsoFrame>
-        </BodyTracker>
-      ) : null}
+        ) : null}
+      </BodyTracker>
     </>
   );
 };

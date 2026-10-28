@@ -4,6 +4,8 @@
 import { lazy, Suspense } from "react";
 import { HandCutout, HandTracker } from "@vincentt-xr/sdk/tracking";
 
+import { CoverInput } from "./spirit/CoverInput";
+import { Hud } from "./spirit/Hud";
 import { SpiritScene } from "./spirit/SpiritScene";
 
 // Dev-only helpers for previewing without a camera. Lazy and behind a
@@ -23,6 +25,8 @@ const DevKeys =
 export const Scene = () => (
   <>
     <SpiritScene />
+    <CoverInput />
+    <Hud />
     {/* Hands stay in front of the masks. */}
     <HandTracker targetFps={12}>
       <HandCutout />
