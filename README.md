@@ -14,6 +14,8 @@ screen: a 🙈 hint asks you to cover up, 🫣 while you're covered. A tap revea
   their crown size. Body tracking is loaded at the start but only runs while an animal shows.
 - Cover detection (`src/spirit/cover.ts`): one or two hands over the face, held a third of a
   second; it keeps the last face box when your hands hide your face.
+- Thumbnails: `public/images/spirit-animal-reveal-thumbnail.jpg` (the owl before / after; the share
+  image) and `spirit-animal-reveal-thumbnail-2.jpg` (the panda).
 - Models: `public/models/vincentt-*.glb`; credits in `CREDITS.md`. To change an animal, edit
   `src/spirit/animals.ts`.
 - Dev preview without a camera: the media switcher (☰) starts on the SDK's "Person Shaking Head"
